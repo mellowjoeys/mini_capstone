@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   # namespace :api do
   #   get "/photos" => "photos#index"
   # end
+  namespace :api do
+    get '/weakest_url' => 'products#weakest_action'
+    get '/farmer_url' => 'products#farmer_action'
+  end
 end
