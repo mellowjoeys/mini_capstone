@@ -1,16 +1,22 @@
 class Api::ProductsController < ApplicationController
-  def weakest_action
-    @characters = Product.all
-    render 'weakest_view.json.jb'
+  def index 
+    @products = Product.all
+    render 'index.json.jb'
   end
 
-  def farmer_action
-    @character = Product.find_by(name: "Farmer")
-    render 'farmer_view.json.jb'
+  def create
+    @product = {
+                name: params[:name],
+                price: params[:price],
+                image_url: params[:image_url],
+                description: params[:description],
+               }
+    @product.save
+    render 'show.json.jb'
   end
 
-  def tien_action
-    @character = Product.find_by(name: "Tien")
-    render 'tien_view.json.jb'
+  def show
+    @product = Product.find(params[:id])
+    render 'show.json.jb'
   end
 end

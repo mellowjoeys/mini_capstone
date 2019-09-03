@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   #   get "/photos" => "photos#index"
   # end
   namespace :api do
-    get '/weakest_url' => 'products#weakest_action'
-    get '/farmer_url' => 'products#farmer_action'
-    get '/tien_url' => 'products#tien_action'
+    get '/products' => 'products#index'
+    post '/products' => 'products#create'
+    get '/products/:id' => 'products#show'
   end
 end

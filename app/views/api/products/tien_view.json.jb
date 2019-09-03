@@ -1,7 +1,0 @@
-{
-  name: @character.name,
-  description: @character.description,
-  image_url: @character.image_url,
-  price: @character.price,
-  id: @character.id
-}
