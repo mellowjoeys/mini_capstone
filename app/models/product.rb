@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
+  has_many :images  
+  
   validates :price, numericality: { :greater_than => 0 }
   validates :price, presence: true
   validates :name, presence: true
@@ -6,6 +9,14 @@ class Product < ApplicationRecord
   validates :description, length: { minimum: 10, maximum: 500 } # {:in => 10..500} also works
   validates :description, presence: true
   validates :image_url, presence: true
+
+  # def supplier # belongs_to :supplier replaces this code
+  #   Supplier.find_by(id: self.supplier_id)
+  # end
+
+  # def images # has_many :images replaces this code
+  #   Image.where(product_id: self.id)
+  # end
 
   def is_discounted?
     # true if price < 300 

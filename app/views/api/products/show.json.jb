@@ -1,2 +1,4 @@
 # @product
-render partial: "product.json.jb", locals: {product: @product} # the value in locals is being passed into the partial 
+render partial: "product.json.jb", locals: {product: @product} # the value in locals is being passed into the partial
+
+#I still dont understand why index and show dont and do use @product in the locals definition. I thought it might not matter, but then I think it does. 
