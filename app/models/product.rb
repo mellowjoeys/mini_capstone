@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
   belongs_to :supplier
-  has_many :images  
-  
+  has_many :images
+  has_many :orders
+
   validates :price, numericality: { :greater_than => 0 }
   validates :price, presence: true
   validates :name, presence: true
