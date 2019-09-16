@@ -9,7 +9,7 @@ class Product < ApplicationRecord
   validates :name, uniqueness: true
   validates :description, length: { minimum: 10, maximum: 500 } # {:in => 10..500} also works
   validates :description, presence: true
-  validates :image_url, presence: true
+  # validates :image_url, presence: true
 
   # def supplier # belongs_to :supplier replaces this code
   #   Supplier.find_by(id: self.supplier_id)
