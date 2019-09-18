@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_many :images
   has_many :orders
   has_many :product_categories
+  has_many :categories, through: :product_categories
 
   validates :price, numericality: { :greater_than => 0 }
   validates :price, presence: true
@@ -25,6 +26,10 @@ class Product < ApplicationRecord
     # else false
     # price < 300 ? true : false # this line utilizes the ternary operator, leading to the happy or sad paths. 
     price < 300
+  end
+
+  def category_names
+    categories.map { |category| category.name }
   end
 
   def tax

@@ -9,5 +9,6 @@
   is_discounted: product.is_discounted?,
   supplier_name: product.supplier.name,
   supplier: (render partial: "api/suppliers/supplier.json.jb", locals: {supplier: product.supplier}),
-  current_user: current_user
+  current_user: current_user,
+  category_names: product.category_names
 }
