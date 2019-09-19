@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
 
   before_action :authenticate_admin, only: [:create, :update, :destroy]
-  "hello"
+
   def index 
     @products = Product.all
 
